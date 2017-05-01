@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Form Validation</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="css/custom.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,58 +23,61 @@
 
   <section>
     <div class="container">
+
       <form class="cmxform" id="signupForm" method="get" action="">
+
+        <fieldset id="gender-radios"">
+          <legend>Anrede:*</legend>
+          <label for="male">
+            <input type="checkbox" id="male" value="male" name="gender">male
+          </label>
+          <label for="female">
+              <input type="checkbox" id="female" value="female" name="gender">female
+          </label>
+          <label for="topic" class="error" style="display: none;"></label>
+        </fieldset>
+
+
         <fieldset>
           <legend>Ausfüllen, abschicken und sofort shoppen:</legend>
-          <div>
-            <label for="firstname">Firstname</label>
+          <p>
+            <label for="firstname">Firstname: *</label>
             <input id="firstname" name="firstname" type="text">
-          </div>
-          <div>
-            <label for="lastname">Lastname</label>
+          </p>
+          <p>
+            <label for="lastname">Lastname: *</label>
             <input id="lastname" name="lastname" type="text">
-          </div>
-          <div>
-            <label for="username">Username</label>
-            <input id="username" name="username" type="text">
-          </div>
-          <div>
-            <label for="password">Password</label>
-            <input id="password" name="password" type="password">
-          </div>
-          <div>
-            <label for="confirm_password">Confirm password</label>
-            <input id="confirm_password" name="confirm_password" type="password">
-          </div>
-          <div>
-            <label for="email">Email</label>
+          </p>
+          <p>
+            <label for="company">Firma:</label>
+            <input id="company" name="company" type="text">
+          </p>
+           <p>
+            <label for="email">Email-Adresse: *</label>
             <input id="email" name="email" type="email">
-          </div>
-          <div>
-             <p>Bitte bestätigen: *</p>
-            <input type="checkbox" class="checkbox" id="agree" name="agree"/> 
-            <label for="agree">Ja, Ich stimme den <a href="#">AGB</a> und <a href="#">Datenschutzbestimmungen</a> der G+J Shop GmhH zu.</label>
-          </div>
-          
-          <fieldset id="newsletter_topics">
-            <legend>Topics (select at least two) - note: would be hidden when newsletter isn't selected, but is visible here for the demo</legend>
-            <label for="topic_marketflash">
-              <input type="checkbox" id="topic_marketflash" value="marketflash" name="topic">Marketflash
-            </label>
-            <label for="topic_fuzz">
-              <input type="checkbox" id="topic_fuzz" value="fuzz" name="topic">Latest fuzz
-            </label>
-            <label for="topic_digester">
-              <input type="checkbox" id="topic_digester" value="digester" name="topic">Mailing list digester
-            </label>
-            <label for="topic" class="error">Please select at least two topics you'd like to receive.</label>
+          </p>
+          <p>
+            <label for="password">Passwort: *</label>
+            <input id="password" name="password" type="password">
+          </p>
+          <p>
+            <label for="confirm_password">Passwort bestätigen: *</label>
+            <input id="confirm_password" name="confirm_password" type="password">
+          </p>
           </fieldset>
-          <div>
-            <input class="submit" type="submit" value="Submit">
-          </div>
-        </fieldset>
+         
+          <fieldset>
+             <legend>Bitte bestätigen: *</legend>
+              <input type="checkbox" id="agree" name="agree"/> 
+              <label for="agree">Ja, Ich stimme den <a href="#">AGB</a> und <a href="#">Datenschutzbestimmungen</a> der G+J Shop GmhH zu.</label>
+          </fieldset>
+          
+
+        <input class="submit" type="submit" value="Submit">
       </form>
-    </div><!-- end of container
+
+
+    </div><!-- end of container -->
 
   </section>
 
@@ -87,8 +92,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-<!--     <script src="js/jquery.js"></script> -->
-    <script src="js/jquery.validate.min.js"></script>
+<!-- https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js -->
+    <script src="js/jquery.validate.js"></script>
     <script src="js/form-validation.js"></script>
+    <script src="js/messages_de.js"></script>
   </body>
 </html>
