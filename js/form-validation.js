@@ -3,6 +3,7 @@ $(document).ready(function() {
 		// validate signup form on keyup and submit
 	     $("form").validate({
 			rules: {
+				Gender:{ required:true },
 				firstname: "required",
 				lastname: "required",
 				email: {
@@ -22,6 +23,9 @@ $(document).ready(function() {
 				agree: "required"
 			},
 			messages: {
+				Gender: {
+					required:"Dies ist ein Pflichtfeld."
+			    },
 				firstname: "Dies ist ein Pflichtfeld.",
 				lastname: "Dies ist ein Pflichtfeld.",
 				email: {
@@ -39,7 +43,15 @@ $(document).ready(function() {
 					equalTo: "Bitte denselben Wert wiederholen."
 				},
 				agree:"Dies ist ein Pflichtfeld."
-			}
+			},
+	  		errorPlacement: function(error, element) {
+		        if (element.is(":radio"))
+					error.appendTo( element.parents('#gender-radios-wrapper') );
+				else if (element.is(":checkbox"))
+					error.appendTo(element.parents('#agree-checkbox-wrapper') );
+				else
+					error.insertAfter( element );
+		    }
 		});
 
 });

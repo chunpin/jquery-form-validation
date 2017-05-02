@@ -27,14 +27,11 @@
       <form class="cmxform" id="signupForm" method="get" action="">
 
         <fieldset id="gender-radios"">
-          <legend>Anrede:*</legend>
-          <label for="male">
-            <input type="checkbox" id="male" value="male" name="gender">male
-          </label>
-          <label for="female">
-              <input type="checkbox" id="female" value="female" name="gender">female
-          </label>
-          <label for="topic" class="error" style="display: none;"></label>
+         <label for='Gender'>Anrede:*</label>
+         <p id='gender-radios-wrapper'>
+          <label><input type='radio' name='Gender' value='Frau' />Frau</label>
+          <label><input type='radio' name='Gender' value='Herr' />Herr</label>
+          </p>
         </fieldset>
 
 
@@ -61,15 +58,17 @@
             <input id="password" name="password" type="password">
           </p>
           <p>
-            <label for="confirm_password">Passwort bestätigen: *</label>
-            <input id="confirm_password" name="confirm_password" type="password">
+            <label for="password_confirm">Passwort bestätigen: *</label>
+            <input id="password_confirm" name="password_confirm" type="password">
           </p>
           </fieldset>
          
           <fieldset>
-             <legend>Bitte bestätigen: *</legend>
+             <legend id='check-agree'>Bitte bestätigen: *</legend>
+             <p id='agree-checkbox-wrapper'>
               <input type="checkbox" id="agree" name="agree">
               <label for="agree">Ja, Ich stimme den <a href="#">AGB</a> und <a href="#">Datenschutzbestimmungen</a> der G+J Shop GmhH zu.</label>
+             </p>
           </fieldset>
           
 
