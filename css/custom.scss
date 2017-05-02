@@ -1,0 +1,36 @@
+// $text-color: #474747;
+$text-color: #474747;
+$error-color: #DF002C;
+$button-color: #4B6374;
+$white-color:#FFFFFF;
+$header-bg-color:#F6F6F6;
+$form-bg-color:#E9E9E9;
+$border-grey:#B9B9B9;
+$border-blue-grey:#89A5B2;
+
+html{
+  padding:15px;
+}
+
+.container.form{
+  padding:24px;
+ 
+  .shop-form{
+    border:1px solid $border-grey;
+    padding:20px;
+    background-color:$form-bg-color;
+  }
+}
+
+
+
+#signupForm{
+  *{
+    color:$text-color;
+    font-weight:300;
+  }
+  
+   .error {
+    color:$error-color;
+  }
+}
