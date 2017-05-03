@@ -46,7 +46,7 @@ $(document).ready(function() {
 			},
 	  		errorPlacement: function(error, element) {
 		        if (element.is(":radio"))
-					error.appendTo( element.parents('#gender-radios-wrapper') );
+					error.insertAfter( element.parents('#gender-radios-wrapper') );
 				else if (element.is(":checkbox"))
 					error.appendTo(element.parents('#agree-checkbox-wrapper') );
 				else
@@ -95,7 +95,6 @@ $(document).ready(function() {
 
 
 // check email *rule* & *message*
-
 
 
 

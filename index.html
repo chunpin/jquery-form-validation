@@ -21,62 +21,64 @@
   </head>
   <body>
 
-  <section>
-    <div class="container">
-       <h2>Ausfüllen, abschicken und sofort shoppen:</h2>
-      <form class="shop-form" id="signupForm" method="get" action="">
-       
-        <fieldset id="gender-radios"">
-         <label for='Gender'>Anrede:*</label>
-         <p id='gender-radios-wrapper'>
-          <label><input type='radio' name='Gender' value='Frau' />Frau</label>
-          <label><input type='radio' name='Gender' value='Herr' />Herr</label>
-          </p>
-        </fieldset>
-
-
-        <fieldset>
-        <!--   <legend>Ausfüllen, abschicken und sofort shoppen:</legend> -->
-          <p>
-            <label for="firstname">Vorname: *</label>
-            <input id="firstname" name="firstname" type="text">
-          </p>
-          <p>
-            <label for="lastname">Nachname: *</label>
-            <input id="lastname" name="lastname" type="text">
-          </p>
-          <p>
-            <label for="company">Firma:</label>
-            <input id="company" name="company" type="text">
-          </p>
-           <p>
-            <label for="email">Email-Adresse: *</label>
-            <input id="email" name="email" type="email">
-          </p>
-          <p>
-            <label for="password">Passwort: *</label>
-            <input id="password" name="password" type="password">
-          </p>
-          <p>
-            <label for="password_confirm">Passwort bestätigen: *</label>
-            <input id="password_confirm" name="password_confirm" type="password">
-          </p>
-          </fieldset>
+<section>
+    <div class="container shop-form-container">
+       <h2 class="form-headline">Ausfüllen, abschicken und sofort shoppen:</h2>
+      <div class="form-wrapper">
+        <form class="shop-form" id="signupForm" method="get" action="">
          
-          <fieldset>
-             <legend id='check-agree'>Bitte bestätigen: *</legend>
-             <p id='agree-checkbox-wrapper'>
-              <input type="checkbox" id="agree" name="agree">
-              <label for="agree">Ja, Ich stimme den 
-                <a href="#myModal" class="trigger-modal" data-toggle="modal">ABG</a> und 
-                <a href="#myModal" class="trigger-modal" data-toggle="modal">Datenschutzbestimmungen</a>
-                der G+J Shop GmhH zu.</label>
-             </p>
+          <fieldset id="gender-radios"">
+           <label for="Gender">Anrede:*</label>
+           <div class="form-input-block" id="gender-radios-wrapper">
+            <label><input type="radio" name="Gender" value="Frau" />Frau</label>
+            <label><input type="radio" name="Gender" value="Herr" />Herr</label>
+           </div>
           </fieldset>
-          
-
-        <input class="submit" type="submit" value="KUNDENKONTO ERSTELLEN">
-      </form>
+        
+        
+          <fieldset>
+          <!--   <legend>Ausfüllen, abschicken und sofort shoppen:</legend> -->
+            <div class="form-input-block">
+              <label for="firstname">Vorname: *</label>
+              <input id="firstname" name="firstname" type="text">
+            </div>
+            <div class="form-input-block">
+              <label for="lastname">Nachname: *</label>
+              <input id="lastname" name="lastname" type="text">
+            </div>
+            <div class="form-input-block">
+              <label for="company">Firma:</label>
+              <input id="company" name="company" type="text">
+            </div>
+             <div class="form-input-block">
+              <label for="email">Email-Adresse: *</label>
+              <input id="email" name="email" type="email">
+            </div>
+            <div class="form-input-block">
+              <label for="password">Passwort: *</label>
+              <input id="password" name="password" type="password">
+            </div>
+            <div class="form-input-block">
+              <label for="password_confirm">Passwort bestätigen: *</label>
+              <input id="password_confirm" name="password_confirm" type="password">
+            </div>
+            </fieldset>
+           
+            <fieldset>
+               <legend id="check-agree">Bitte bestätigen: *</legend>
+               <div class="form-input-block" id="agree-checkbox-wrapper">
+                <input type="checkbox" id="agree" name="agree">
+                <label for="agree">Ja, Ich stimme den 
+                  <a href="#myModal" class="trigger-modal" data-toggle="modal">ABG</a> und 
+                  <a href="#myModal" class="trigger-modal" data-toggle="modal">Datenschutzbestimmungen</a>
+                  der G+J Shop GmhH zu.</label>
+               </div>
+            </fieldset>
+            
+        
+          <input class="submit" type="submit" value="KUNDENKONTO ERSTELLEN">
+        </form>
+      </div>
 
       
     </div><!-- end of container -->

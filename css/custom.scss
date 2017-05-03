@@ -2,35 +2,95 @@
 $text-color: #474747;
 $error-color: #DF002C;
 $button-color: #4B6374;
-$white-color:#FFFFFF;
+$white:#FFFFFF;
 $header-bg-color:#F6F6F6;
 $form-bg-color:#E9E9E9;
 $border-grey:#B9B9B9;
 $border-blue-grey:#89A5B2;
+$form-padding:20px;
+$form-margin:20px;
 
 html{
   padding:15px;
 }
 
-.container.form{
-  padding:24px;
- 
+.container.shop-form-container{
+
+  padding:$form-padding;
+  .form-headline{
+    background-color:$header-bg-color;
+    border-bottom:1px solid $border-blue-grey;
+    padding:$form-padding;
+    margin-bottom:$form-margin;
+  }
+  .form-wrapper{
+    padding:$form-padding;
+    border:1px solid $border-grey;
+  }
   .shop-form{
     border:1px solid $border-grey;
-    padding:20px;
+    padding:$form-padding;
     background-color:$form-bg-color;
+    .form-input-block{
+      width:100%;
+      label{
+        display:block;
+      }
+      input{
+        width:100%;
+      }
+      /*gender*/
+      &#gender-radios-wrapper{
+        padding:$form-padding;
+        border:1px solid $white;
+        label{
+          display:inline;
+        }
+        input{
+          width:21px;
+          height:auto;
+        }
+      }
+    }
   }
 }
 
 
 
-#signupForm{
+.shop-form-container{
   *{
     color:$text-color;
     font-weight:300;
+    font-size:18px;
   }
-  
-   .error {
+//  input[type='radio']:after {
+//     width: 21px;
+//     height: 21px;
+//     border-radius: 15px;
+//     position: relative;
+//     background-color: #d1d3d1;
+//     content: '';
+//     display: inline-block;
+//     visibility: visible;
+//     border: 2px solid white;
+// }
+
+// input[type='radio']:checked:after {
+//     width: 21px;
+//     height: 21px;
+//     border-radius: 15px;
+//     position: relative;
+//     background-color: #ffa500;
+//     content: '';
+//     display: inline-block;
+//     visibility: visible;
+//     border: 2px solid white;
+// }
+  input.error{
+    border:1px solid red;
+  }
+  .error {
     color:$error-color;
   }
+  
 }
