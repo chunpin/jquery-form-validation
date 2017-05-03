@@ -15,7 +15,9 @@ html{
 }
 
 .container.shop-form-container{
-
+  .error{
+    padding-left:35%;
+  }
   padding:$form-padding;
   .form-headline{
     background-color:$header-bg-color;
@@ -31,27 +33,45 @@ html{
     border:1px solid $border-grey;
     padding:$form-padding;
     background-color:$form-bg-color;
-    .form-input-block{
-      width:100%;
-      label{
-        display:block;
+     
+      fieldset{
+           #Gender-error,#agree-error {
+               padding-left:0;
+           }
+           .form-input-block{
+            margin-top:20px;
+            display:flex;
+            width:100%;
+              label{
+                width:35%;
+              }
+              input[type=text],input[type=email],input[type=password]{
+                width:65%;
+              }
+              .agree-label{
+                width:100%;
+              }
+             
+           }
       }
-      input{
-        width:100%;
-      }
-      /*gender*/
-      &#gender-radios-wrapper{
-        padding:$form-padding;
-        border:1px solid $white;
-        label{
-          display:inline;
-        }
-        input{
-          width:21px;
-          height:auto;
-        }
-      }
-    }
+    
+//       fieldset#regular-info-input-group{
+//            .form-input-block{
+//             margin-top:20px;
+//             display:flex;
+//             width:100%;
+//               label{
+//                 width:35%;
+//               }
+//               input[type=text],input[type=email],input[type=password]{
+//                 width:65%;
+//               }
+//               .agree-label{
+//                 width:100%;
+//               }
+//            }
+//       }
+    
   }
 }
 
@@ -61,7 +81,7 @@ html{
   *{
     color:$text-color;
     font-weight:300;
-    font-size:18px;
+    font-size:12px;
   }
 //  input[type='radio']:after {
 //     width: 21px;
@@ -93,4 +113,16 @@ html{
     color:$error-color;
   }
   
+}
+
+
+
+@media only screen and (min-width: 768px ){
+   .shop-form-container{
+      *{
+        color:$text-color;
+        font-weight:300;
+        font-size:18px;
+    }
+  }
 }

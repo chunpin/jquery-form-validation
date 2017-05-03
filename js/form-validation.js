@@ -48,9 +48,9 @@ $(document).ready(function() {
 		        if (element.is(":radio"))
 					error.insertAfter( element.parents('#gender-radios-wrapper') );
 				else if (element.is(":checkbox"))
-					error.appendTo(element.parents('#agree-checkbox-wrapper') );
+					error.insertAfter(element.parent('#agree-checkbox-wrapper') );
 				else
-					error.insertAfter( element );
+					error.insertAfter( element.parent());
 		    }
 		});
 
