@@ -1,6 +1,5 @@
 // $text-color: #474747;
 $text-color: #474747;
-$error-color: #DF002C;
 $button-color: #4B6374;
 $white:#FFFFFF;
 $header-bg-color:#F6F6F6;
@@ -9,30 +8,78 @@ $border-grey:#B9B9B9;
 $border-blue-grey:#89A5B2;
 $form-padding:20px;
 $form-margin:20px;
+$success-color:#8BC34A;
+$error-color:#DF002C;
+$outline-color:#94AEB8;
 
 html{
   padding:15px;
 }
 
 .container.shop-form-container{
-  .error{
-    padding-left:35%;
+
+  .fieldset-wrapper{
+    background-color:$form-bg-color;
+    padding:$form-padding;
   }
-  padding:$form-padding;
+  #gender-radios-wrapper{
+     border: 1px solid $white; 
+     padding:10px;
+      label{
+        margin:0px;
+        width:60px;
+          input{
+            margin-right:5px;
+          }
+      }
+  }
+  #agree-checkbox-wrapper{
+    display:flex;
+    align-items:center;
+    border: 1px solid $white;
+    padding:10px;
+      input{
+          margin-right:10px;
+      }
+      label{
+        margin:0px;
+      }
+  }
+  
+  label.error.success{
+    color:$success-color;
+  }
+  label.error{
+    color:$error-color;
+  }
+  input:focus{
+    outline-color:$outline-color;
+    border: 1px solid $outline-color;
+  }
+  input.error:focus{
+    outline-color:$error-color;
+    border:1px solid $error-color;
+  }
+  input.valid:focus{
+    outline-color:$success-color;
+    border:1px solid $success-color;
+  } 
+  input.error{
+    border:1px solid $error-color;
+  }
+  input.valid{
+    border:1px solid $success-color;
+  }
   .form-headline{
     background-color:$header-bg-color;
     border-bottom:1px solid $border-blue-grey;
     padding:$form-padding;
     margin-bottom:$form-margin;
   }
-  .form-wrapper{
-    padding:$form-padding;
-    border:1px solid $border-grey;
-  }
   .shop-form{
     border:1px solid $border-grey;
     padding:$form-padding;
-    background-color:$form-bg-color;
+    // background-color:$form-bg-color;
      
       fieldset{
            #Gender-error,#agree-error {
@@ -40,37 +87,26 @@ html{
            }
            .form-input-block{
             margin-top:20px;
-            display:flex;
             width:100%;
-              label{
-                width:35%;
-              }
-              input[type=text],input[type=email],input[type=password]{
-                width:65%;
-              }
-              .agree-label{
-                width:100%;
-              }
-             
-           }
+               .input-wrapper{
+                    display:flex;
+                    flex-wrap:wrap;
+                    label{
+                      width:35%;
+                    }
+                    label.error,label.error.success{
+                        width:100%;
+                        padding-left:35%;
+                    }
+                    input[type=text],input[type=email],input[type=password]{
+                      width:65%;
+                    }
+                    .agree-label{
+                      width:100%;
+                    }
+               }/*input-wrapper*/
+           }/*form-input-block*/
       }
-    
-//       fieldset#regular-info-input-group{
-//            .form-input-block{
-//             margin-top:20px;
-//             display:flex;
-//             width:100%;
-//               label{
-//                 width:35%;
-//               }
-//               input[type=text],input[type=email],input[type=password]{
-//                 width:65%;
-//               }
-//               .agree-label{
-//                 width:100%;
-//               }
-//            }
-//       }
     
   }
 }
@@ -83,46 +119,57 @@ html{
     font-weight:300;
     font-size:12px;
   }
-//  input[type='radio']:after {
-//     width: 21px;
-//     height: 21px;
-//     border-radius: 15px;
-//     position: relative;
-//     background-color: #d1d3d1;
-//     content: '';
-//     display: inline-block;
-//     visibility: visible;
-//     border: 2px solid white;
-// }
-
-// input[type='radio']:checked:after {
-//     width: 21px;
-//     height: 21px;
-//     border-radius: 15px;
-//     position: relative;
-//     background-color: #ffa500;
-//     content: '';
-//     display: inline-block;
-//     visibility: visible;
-//     border: 2px solid white;
-// }
-  input.error{
-    border:1px solid red;
-  }
-  .error {
-    color:$error-color;
-  }
-  
 }
 
 
 
 @media only screen and (min-width: 768px ){
-   .shop-form-container{
-      *{
-        color:$text-color;
-        font-weight:300;
-        font-size:18px;
+    .container.shop-form-container{
+        *{
+          color:$text-color;
+          font-weight:300;
+          font-size:18px;
+        }
     }
-  }
 }
+
+
+@media only screen and (min-width: 992px ){
+    .container.shop-form-container{
+        .shop-form{
+            fieldset#regular-info-input-group{
+               display: flex;
+               flex-direction: row;
+               flex-wrap:wrap;
+                
+               #Gender-error,#agree-error {
+                   padding-left:0;
+               }
+               .form-input-block{
+                margin:auto;
+                width:50%;
+                   .input-wrapper{
+                        display:flex;
+                        flex-wrap:wrap;
+                        width:100%;
+                        label{
+                          width:100%;
+                        }
+                        label.error,label.error.success{
+                            width:100%;
+                            padding-left:0px;
+                        }
+                        input[type=text],input[type=email],input[type=password]{
+                          width:100%;
+                        }
+                        .agree-label{
+                          width:100%;
+                        }
+                   }/*input-wrapper*/
+               }/*form-input-block*/
+          }/*fieldset*/
+        }/*.shop-form*/
+
+    }
+}
+

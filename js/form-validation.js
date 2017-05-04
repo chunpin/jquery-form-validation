@@ -2,57 +2,60 @@
 $(document).ready(function() {
 		// validate signup form on keyup and submit
 	     $("form").validate({
-			rules: {
-				Gender:{ required:true },
-				firstname: "required",
-				lastname: "required",
-				email: {
-					required: true,
-					email: true,
-					// remote: "emails.action"
-				},
-				password: {
-					required: true,
-					minlength: 5
-				},
-				password_confirm: {
-					required: true,
-					minlength: 5,
-					equalTo: "#password"
-				},
-				agree: "required"
-			},
-			messages: {
-				Gender: {
-					required:"Dies ist ein Pflichtfeld."
-			    },
-				firstname: "Dies ist ein Pflichtfeld.",
-				lastname: "Dies ist ein Pflichtfeld.",
-				email: {
-					required: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-					minlength: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-					// remote: jQuery.validator.format("{0} is already in use")
-				},
-				password: {
-					required: "Dies ist ein Pflichtfeld.",
-					minlength: jQuery.validator.format("Geben Sie bitte mindestens {0} Zeichen ein.")
-				},
-				password_confirm: {
-					required: "Dies ist ein Pflichtfeld.",
-					minlength: jQuery.validator.format("Geben Sie bitte mindestens {0} Zeichen ein."),
-					equalTo: "Bitte denselben Wert wiederholen."
-				},
-				agree:"Dies ist ein Pflichtfeld."
-			},
-	  		errorPlacement: function(error, element) {
-		        if (element.is(":radio"))
-					error.insertAfter( element.parents('#gender-radios-wrapper') );
-				else if (element.is(":checkbox"))
-					error.insertAfter(element.parent('#agree-checkbox-wrapper') );
-				else
-					error.insertAfter( element.parent());
-		    }
-		});
+          rules: {
+            Gender:{ required:true },
+            firstname: "required",
+            lastname: "required",
+            email: {
+              required: true,
+              email: true,
+              // remote: "emails.action"
+            },
+            password: {
+              required: true,
+              minlength: 5
+            },
+            password_confirm: {
+              required: true,
+              minlength: 5,
+              equalTo: "#password"
+            },
+            agree: "required"
+          },
+          messages: {
+            Gender: {
+              required:"Dies ist ein Pflichtfeld."
+              },
+            firstname: "Dies ist ein Pflichtfeld.",
+            lastname: "Dies ist ein Pflichtfeld.",
+            email: {
+              required: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+              minlength: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+              // remote: jQuery.validator.format("{0} is already in use")
+            },
+            password: {
+              required: "Dies ist ein Pflichtfeld.",
+              minlength: jQuery.validator.format("Geben Sie bitte mindestens {0} Zeichen ein.")
+            },
+            password_confirm: {
+              required: "Dies ist ein Pflichtfeld.",
+              minlength: jQuery.validator.format("Geben Sie bitte mindestens {0} Zeichen ein."),
+              equalTo: "Bitte denselben Wert wiederholen."
+            },
+            agree:"Dies ist ein Pflichtfeld."
+          },
+          errorPlacement: function(error, element) {
+                if (element.is(":radio"))
+              error.insertAfter( element.parents('#gender-radios-wrapper') );
+            else if (element.is(":checkbox"))
+              error.insertAfter(element.parent('#agree-checkbox-wrapper') );
+            else
+              error.appendTo( element.parent());
+          },
+          success: function(label) {
+            label.text("Eingaben OK").addClass("success");
+          }
+		  });
 
 });
 
