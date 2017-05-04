@@ -137,17 +137,21 @@ html{
 @media only screen and (min-width: 992px ){
     .container.shop-form-container{
         .shop-form{
-            fieldset#regular-info-input-group{
-               display: flex;
-               flex-direction: row;
-               flex-wrap:wrap;
+            #regular-info-input-group{
+//                display: flex;
+//                flex-direction: row;
+//                flex-wrap:wrap;
                 
                #Gender-error,#agree-error {
                    padding-left:0;
                }
                .form-input-block{
+                float:left;
                 margin:auto;
-                width:50%;
+                width: calc(( 100% - 10px ) / 2);
+                   &:nth-child(1),&:nth-child(3),&:nth-child(5){
+                     margin-right:10px;
+                   }
                    .input-wrapper{
                         display:flex;
                         flex-wrap:wrap;
