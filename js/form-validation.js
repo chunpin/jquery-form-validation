@@ -44,6 +44,7 @@ $(document).ready(function() {
             },
             agree:"Dies ist ein Pflichtfeld."
           },
+          // the errorPlacement has to take the table layout into account
           errorPlacement: function(error, element) {
                 if (element.is(":radio"))
               error.insertAfter( element.parents('#gender-radios-wrapper') );
@@ -52,9 +53,11 @@ $(document).ready(function() {
             else
               error.appendTo( element.parent());
           },
+         // set this class to error-labels to indicate valid fields
           success: function(label) {
             label.text("Eingaben OK").addClass("success");
           },
+          // specifying a submitHandler prevents the default submit, good for the demo
           submitHandler: function() {
             alert("submitted!");
           }
