@@ -12,6 +12,7 @@ $error-color:#DF002C;
 $outline-color:#94AEB8;
 $submit-button-color:#89A5B2;
 $text-blue:#89A5B2;
+$submit-button-hover-color:#474747;
 
 html{
   padding:15px;
@@ -83,7 +84,7 @@ html{
   .shop-form{
     border:1px solid $border-grey;
     padding:$form-padding;
-    padding-bottom:60px;
+    padding-bottom:100px;
     // background-color:$form-bg-color;
      
       fieldset{
@@ -116,10 +117,18 @@ html{
   }/*.shop-form*/
   .submit{
     background-color:$submit-button-color;
+    border:none;
     color:$white;
     float:right;
-    padding:10px 80px 10px 80px;
-    margin-top:10px;
+    // padding:10px 80px 10px 80px;
+    padding:0.625em 5em 0.625em 5em;
+    margin-top:20px;
+    transition:all .2s ease-in-out;
+    &:hover{
+      cursor: pointer;
+      background-color:$submit-button-hover-color;
+      box-shadow: 10px 10px 10px rgba(0,0,0,.2);
+    }
   }
   clear:both;
 }/*.container.shop-form-container*/
@@ -148,7 +157,7 @@ html{
       .modal-content{
           .modal-header{
               position:relative;
-              // margin:auto;
+              border-bottom:0px;
                 .modal-title{
                     border-bottom:1px solid $border-blue-grey;
                     width:100%;
